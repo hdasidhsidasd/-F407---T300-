@@ -1,0 +1,67 @@
+# Keil MDK / STM32 构建产物
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.bin
+*.htm
+*.dep
+*.lnp
+*.lst
+*.map
+*.bak
+*.sct.bak
+RTE/
+Listings/
+Objects/
+DebugConfig/
+*.uvguix.*
+*.uvopt
+*.uvoptx
+*.scvd
+*.wrn
+*.iex
+
+# IDE / 编辑器临时文件
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+Desktop.ini
+
+# 第三方资料包与工具（本项目为资料库，不入 Git）
+*.pdf
+*.chm
+*.avi
+*.mp4
+*.wmv
+*.zip
+*.rar
+*.7z
+*.exe
+*.dll
+*.msi
+*.IntLib
+*.lib
+
+# 视频教程、SD 卡素材等大体积资源
+7--SD卡根目录文件/
+
+# 临时交接/对话文件
+/CODEX_HANDOFF.md
+
+# Source Insight 项目目录
+*.si4project/
+
+# 日志与临时输出
+*.log
+logs/
+tmp/
+temp/
+
+# reference / template directories (not repository content)
+/Demo_Agents_V2/
+/普中F407-定通-T300开发板（麒麟F407/
+/笔记大全/

@@ -1,0 +1,186 @@
+<html style="margin:0;padding:0;">
+<title>STM32F407 学习路线总览（麒麟F407开发板）</title>
+<div style="width:100%;box-sizing:border-box;background:#f5f7fa;padding:22px;font-family:'Microsoft YaHei','PingFang SC',sans-serif;color:#1f2d3d;line-height:1.55;">
+  <div style="background:#ffffff;border-radius:12px;padding:18px 22px;border-left:6px solid #2563eb;margin-bottom:16px;">
+    <div style="font-size:22px;font-weight:700;color:#1e3a8a;">STM32F407（Cortex-M4）学习路线总览</div>
+    <div style="font-size:14px;color:#64748b;margin-top:4px;">基于「普中F407-定通-T300（麒麟F407）开发板」光盘资料整理 · 主线为 6 个阶段 + 按兴趣进阶</div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;">
+    <div style="flex:1;min-width:280px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 16px;font-size:14px;">
+      <b style="color:#1e40af;">主线选择（二选一，中途可切换）：</b><br>
+      <span style="color:#0f766e;font-weight:600;">推荐：HAL 库版</span> —— MP4 视频（手把手带你学STM32–HAL库版）+ 7-基础实验–HAL库版 + 开发攻略 V2.0 HAL库版；更适合新学、工程更规范。<br>
+      <span style="color:#b45309;font-weight:600;">对照：标准库版</span> —— AVI 视频（普中STM32F407开发板视频教程）+ 1-基础实验（标准库）+ 开发攻略 V2.2 标准库版；经典教学、网上资料最多。
+    </div>
+    <div style="flex:1;min-width:280px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 16px;font-size:14px;">
+      <b style="color:#9a3412;">通用建议：</b><br>
+      第 1～2 阶段建议用<b>寄存器实验</b>理解底层（实验 1、2、5、6），之后再切入库函数 / HAL 库提效；每个实验遵循「先跑通例程 → 看懂代码 → 自己重写 → 改功能」四步。<br>
+      <span style="color:#64748b;">节奏参考：每周 2～3 个实验，约 2～3 个月走完主线。</span>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#94a3b8;border:3px solid #cbd5e1;"></div>
+      <div style="width:3px;flex:1;background:#cbd5e1;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:12px 16px;border:1px solid #e2e8f0;font-size:14px;">
+        <b style="color:#475569;">第 0 步 · 环境准备（先做，别跳过）</b>
+        <div style="color:#334155;margin-top:4px;">阅读「1--用户必看」：开机体验 + 入门教程 + KEIL5安装 + 仿真器使用；安装 KEIL5（MDK528）+ STM32F4xx_DFP 器件包 + CH340 驱动；用 PZ-ISP 或仿真器点亮板载例程。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 1 · 芯片认知与工程基础 <span style="font-size:13px;font-weight:400;color:#64748b;">（视频 1–6 章 / AVI 1–7 集）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">STM32 是什么 / 命名规则</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">最小系统（晶振/复位/电源/下载）</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">存储器映射与寄存器</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">C 语言指针/结构体操作寄存器</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">建第一个工程模板</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">资料：2--开发板原理图（对照实物）· 8--STM32相关资料（参考手册/权威指南）· 实验 1-寄存器模板创建</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 2 · GPIO 与库函数入门 <span style="font-size:13px;font-weight:400;color:#64748b;">（实验 1–9 · 视频 6–15 章）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">寄存器点亮 LED</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">GPIO 结构与 8 种模式</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">位带操作</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">时钟系统（时钟树）</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">SysTick 延时</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">蜂鸣器 / 按键</span>
+          <span style="background:#d1fae5;color:#065f46;border-radius:6px;padding:3px 10px;font-size:13px;font-weight:600;">★ 固件库/HAL 库模板 → 库函数点灯</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">此阶段结束时应能独立搭建工程、看懂库函数调用链（HAL_GPIO_Init / GPIO_InitStructure）。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 3 · 中断与定时器 <span style="font-size:13px;font-weight:400;color:#64748b;">（实验 10–12 · 视频 16–19 章）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">NVIC 中断系统</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">外部中断 EXTI</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">定时器中断（时基单元）</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">PWM 呼吸灯</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">核心理解：中断优先级抢占/响应、定时器预分频–计数–自动重载的算时间方法。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 4 · 通信、模拟外设与低功耗 <span style="font-size:13px;font-weight:400;color:#64748b;">（实验 13–26 · 视频 20–34 章）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">USART 串口 + printf 重定向</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">独立/窗口看门狗</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">输入捕获 / 电容触摸按键</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">ADC / 内部温度 / 光敏</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">DAC / PWM-DAC</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">DMA</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">RTC 实时时钟</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">随机数 / 待机唤醒</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">串口 + DMA 是嵌入式调试与数据搬运的基石，建议练到能不看例程写出来。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 5 · 总线接口与存储 <span style="font-size:13px;font-weight:400;color:#64748b;">（实验 27–39 · 视频 35–48 章）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">I2C–EEPROM / DS18B20</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">红外遥控 / RS485 / CAN</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">FSMC–TFTLCD / 触摸屏</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">SPI–FLASH / 内部 Flash</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">MPU6050（I2C+DMP）</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">FSMC–外扩 SRAM</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">内存管理</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">本阶段结束即掌握嵌入式两大主流总线（I2C/SPI）与工业总线（CAN/RS485），可以接各种传感器与屏。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;">
+    <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;">
+      <div style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #93c5fd;"></div>
+      <div style="width:3px;flex:1;background:#93c5fd;"></div>
+    </div>
+    <div style="flex:1;padding-bottom:18px;">
+      <div style="background:#ffffff;border-radius:10px;padding:14px 16px;border:1px solid #bfdbfe;">
+        <div style="font-size:16px;font-weight:700;color:#1e40af;">阶段 6 · 综合应用与文件系统 <span style="font-size:13px;font-weight:400;color:#64748b;">（实验 40–52）</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">SDIO–SD 卡 + FATFS 文件系统</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">FLASH 字库 / 图片解码</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">音乐播放器 / 录音机 / 视频播放</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">拼音输入法 / 串口 IAP 升级</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">USB SLAVE 读卡器 / HOST U盘 / 鼠标键盘</span>
+          <span style="background:#eff6ff;color:#1e40af;border-radius:6px;padding:3px 10px;font-size:13px;">LwIP 以太网</span>
+        </div>
+        <div style="font-size:13px;color:#64748b;margin-top:8px;">选 2～3 个做综合项目收尾（推荐：数码相框、音乐播放器、USB读卡器），把前面外设串起来。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#ffffff;border-radius:12px;padding:16px 20px;border:1px solid #d1fae5;margin-bottom:16px;">
+    <div style="font-size:16px;font-weight:700;color:#065f46;">进阶方向（主线完成后按兴趣选，均有配套视频/攻略/实验）</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>实时操作系统 RTOS</b><br><span style="color:#475569;">FreeRTOS（推荐先学，视频+攻略+实验）→ RT-Thread → UCOSIII</span></div>
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>图形界面 GUI</b><br><span style="color:#475569;">LittleVGL 或 STemWin（开发攻略 V2.1），做交互式界面</span></div>
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>嵌入式网络 LwIP</b><br><span style="color:#475569;">10 个实验：无 OS 移植 → RAW/UDP/TCP → NETCONN（配 UCOSIII）</span></div>
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>物联网 IoT</b><br><span style="color:#475569;">机智云开发攻略 V1.1 + 实验（ESP8266 上云）</span></div>
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>工业总线 Modbus</b><br><span style="color:#475569;">开发攻略 V1.2 + FreeModbus 移植实验</span></div>
+      <div style="flex:1;min-width:200px;background:#f0fdf4;border-radius:8px;padding:10px 12px;font-size:14px;"><b>扩展玩法</b><br><span style="color:#475569;">OLED、DHT11、RFID 门禁、俄罗斯方块/贪吃蛇等 10 个扩展实验</span></div>
+    </div>
+  </div>
+
+  <div style="background:#f8fafc;border-radius:12px;padding:14px 20px;border:1px dashed #cbd5e1;">
+    <div style="font-size:15px;font-weight:700;color:#334155;">全程工具与资料（随时查阅）</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:13px;color:#475569;">
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">查外设寄存器：STM32F4xx 中文参考手册</span>
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">查内核：Cortex-M3/M4 权威指南（中文）</span>
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">查芯片：STM32F407ZGT6 数据手册</span>
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">查函数：固件库使用手册 / 开发攻略对应章节</span>
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">C 语言补强：C语言加油站</span>
+      <span style="background:#ffffff;border:1px solid #e2e8f0;border-radius:6px;padding:3px 10px;">工具：串口助手 · 取模软件 · Image2Lcd · 网络调试助手 · PZ-ISP</span>
+    </div>
+  </div>
+</div>
+</html>
